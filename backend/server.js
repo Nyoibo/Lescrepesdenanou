@@ -24,29 +24,14 @@ if (!fs.existsSync(frontendPath)) {
 app.use(cors());
 app.use(express.static(frontendPath));
 
-// 👉 Route racine : sert index.html
-app.get('/', (req, res) => {
-    res.sendFile(path.join(frontendPath, 'index.html'));
-});
-
-// 👉 URL propre : /panier ➜ Panier.html
-app.get('/panier', (req, res) => {
-    res.sendFile(path.join(frontendPath, 'Panier.html'));
-});
-
-// 👉 URL propre : /commande ➜ Commande.html
-app.get('/commande', (req, res) => {
-    res.sendFile(path.join(frontendPath, 'Commande.html'));
-});
-
-// 👉 Optionnel : masquer aussi /success ➜ success.html
-app.get('/success', (req, res) => {
-    res.sendFile(path.join(frontendPath, 'success.html'));
-});
-
-// 👉 Optionnel : masquer aussi /cancel ➜ cancel.html
-app.get('/cancel', (req, res) => {
-    res.sendFile(path.join(frontendPath, 'cancel.html'));
+// Route pour accéder au panier
+app.get('/Panier.html', (req, res) => {
+    const filePath = path.join(frontendPath, 'Panier.html');
+    if (!fs.existsSync(filePath)) {
+        console.error("🚨 Fichier panier.html introuvable !");
+        return res.status(404).send("Fichier panier.html introuvable.");
+    }
+    res.sendFile(filePath);
 });
 
 // Middleware spécial pour /webhook
@@ -105,8 +90,8 @@ app.post('/create-checkout-session', async (req, res) => {
             payment_method_types: ['card'],
             line_items: lineItems,
             mode: 'payment',
-            success_url: 'https://lescrepesdenanou.onrender.com/success',
-            cancel_url: 'https://lescrepesdenanou.onrender.com/cancel',
+            success_url: 'https://lescrepesdenanou.onrender.com/success.html',
+            cancel_url: 'https://lescrepesdenanou.onrender.com/cancel.html',
             customer_email: emailClient,
             metadata: { orderDetails }
         });
@@ -181,6 +166,11 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), (req, res) =>
     }
 
     return res.status(400).send('Événement non pris en charge.');
+});
+
+// Route index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 // Lancer le serveur
