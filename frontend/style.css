@@ -1,0 +1,1880 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+
+.nanou-text {
+    color: black;
+}
+
+
+
+p{
+    font-weight: 300;
+    color: #111;
+}
+
+header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 20px 10px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.logo{
+    color: #fff;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+}
+.logo span{
+    color: #fb911f;
+}
+
+
+.navbar{
+    display: flex;
+    position: relative;
+}
+.navbar li{
+    list-style: none;
+}
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+.btn-reserve{
+    padding: 10px 20px;
+    background: #fb911f;
+   margin-top: -10px;
+   text-transform:uppercase ;
+}
+
+.btn-reserve:hover{
+    background: #d87710;
+    transition: ease-out;
+}
+
+header .navbar li a:hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+
+
+
+
+/* 🌟 Style du logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* 🌟 Logo en cercle */
+.logo-img {
+    width: 50px; /* Ajuste la taille selon ton besoin */
+    height: 50px; /* Assure une forme carrée avant arrondi */
+    border-radius: 50%; /* Rend l'image circulaire */
+    object-fit: cover; /* Ajuste l'image pour bien remplir le cercle */
+    border: 2px solid #ff8c00; /* Optionnel : Ajoute une bordure orange */
+    margin-right: 10px; /* Espacement entre le logo et le texte */
+}
+
+/* 🌟 Mise en forme du texte */
+.logo span {
+    color: #ff8c00; /* Orange pour "Crêpes" */
+    font-weight: bold;
+}
+/* 🌟 Style du logo */
+
+
+
+
+
+
+/*ANIMATION DES IMAGES EN ARRIERE PLAN*/
+
+.banniere {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden; /* Empêche les débordements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: slideAnimation 30s infinite; /* Animation pour le défilement : 10s par image */
+}
+
+.slide {
+    flex: 0 0 100%; /* Chaque image occupe 100% de la largeur */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.banniere .contenu {
+    position: relative;
+    z-index: 2; /* Place le texte au-dessus des images */
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.banniere .contenu h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.banniere .contenu p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.banniere .contenu a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff7f50;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.banniere .contenu a:hover {
+    background-color: #ff4500;
+    transform: scale(1.1);
+}
+
+/* Animation pour le défilement */
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(0%);
+    }
+    33.33% {
+        transform: translateX(-100%);
+    }
+    66.66% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+
+
+/*ANIMATION DU TEXTE "BIENVENU"*/
+
+/* Animation pour le texte */
+@keyframes textAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Départ légèrement en bas */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Position finale normale */
+    }
+}
+
+.banniere .contenu h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    opacity: 0; /* Masqué par défaut */
+    animation: textAppear 2s ease-in-out 0.5s forwards; /* Animation sur 2s avec un délai de 0.5s */
+}
+
+.banniere .contenu p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0; /* Masqué par défaut */
+    animation: textAppear 2s ease-in-out 1s forwards; /* Animation avec un léger décalage (1s) */
+}
+
+.banniere .contenu a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff7f50;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Masqué par défaut */
+    animation: textAppear 2s ease-in-out 1.5s forwards; /* Animation décalée de 1.5s */
+}
+
+.banniere .contenu a:hover {
+    background-color: #ff4500;
+    transform: scale(1.1);
+}
+
+
+
+
+
+/*Mise en place de l'interface (espace) de l'image de mayotte*/
+.apropos .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col66 {
+    width: 66%; /* 2/3 pour le texte */
+    padding: 30px;
+}
+
+.col33 {
+    width: 23%; /* 1/3 pour l'image */
+    display: flex;
+    justify-content: flex-start; /* Aligner l'image vers la gauche */
+    align-items: center;
+    margin-left: 100px; /* Décale l'image vers la gauche */
+}
+
+
+.col33 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50px; /* Facultatif : arrondi les bords de l'image */
+}
+/*Mise en place de l'interface (espace) de l'image de mayotte*/
+
+
+
+
+
+
+
+
+.banniere .contenu{
+    max-width: 70%;
+    text-align: center;
+}
+.banniere .contenu h2{
+    color: #fff;
+    font-size: 3em;
+    text-transform: capitalize;
+}
+.contenu p:nth-child(2){
+    color: #ffff;
+    font-size: 1.2em;
+}
+
+
+.btn1{
+    font-size: 1em;
+    color: #fff;
+    background: #fb911f;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+.btn2{
+    font-size: 1em;
+    color: #fff;
+    background: #2a4963;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+
+.btn1:hover{
+letter-spacing: 4px;
+}
+section{
+    padding: 100px;
+}
+.row{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .col50{
+    position: relative;
+    width: 48%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.row .col50 h2{
+    margin-bottom: 20px;
+}
+
+.titre-texte{
+    color: #000;
+    font-size: 2em;
+    font-weight: 300px;
+    text-transform: capitalize;
+}
+
+.titre-texte span{
+    color: #fb911f;
+    font-size: 1.5em;
+    font-weight: 700px;
+}
+
+.row .col50 img{
+    height: 450px;
+    width: 600px;
+    position: relative;
+}
+
+.titre{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu{
+    margin-top: -100px;
+}
+
+.menu .contenu{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.menu .contenu .box{
+    width: 350px;
+    margin: 20px;
+    border: 20px solid #fff;
+    box-shadow: 20px 15px 35px rgba(0,0,0, 0.8);
+}
+
+.menu .contenu .box .imbox{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.menu .contenu .box .imbox img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.menu .contenu .box .text{
+    text-align: center;
+    font-weight: 300px;
+    color: #111;
+}
+
+.menu .contenu .box .text h3{
+    font-weight: 400;
+}
+
+.expert{
+    margin-top:-100px;
+}
+
+.expert .contenu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.expert .contenu .box{
+    width: 250px;
+    margin: 15px;
+}
+.expert .contenu .box img{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.expert .contenu .box h3{
+    color: #111;
+    font-weight: 400;
+    text-align: center;
+}
+
+.temoignage{
+    background-image: url(./images/bois.jpg);
+    background-size: cover;
+}
+
+.temoignage .contenu{
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.temoignage .contenu .box{
+    width: 340px;
+    margin: 20px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+.temoignage .contenu .box .imbox{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.temoignage .contenu .box .imbox img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.temoignage .contenu .box .text{
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.temoignage .contenu .box .text h3{
+    color: #fb911f;
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.blanc .titre-texte{
+    color: #fff;
+}
+
+.blanc .titre-texte,
+.blanc p{
+    color: #fff;
+}
+
+.contact{
+    background-image: url(./images/crepe5.jpg);
+    background-size: cover;
+    box-shadow: 2px 2px 12px rgba(0,0,0, 0.8);
+    width: 100%;
+    background-position: unset;
+}
+
+.contactform{
+    padding: 75px 50px;
+    background: #fff;
+    box-shadow: 5px 15px 50px rgba(0,0,0, 0.8);
+    max-width: 500px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 38%;
+}
+
+.contactform .inputboite{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contactform h3{
+    color: #111;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.contactform .inputboite input,
+.contactform .inputboite textarea{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    resize: none;
+}
+
+.contactform .inputboite input[type="submit"]{
+    font-size: 1em;
+    font-weight: 700;
+    color: #ffff;
+    background: #fb911f;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    transition: 0.5s;
+    max-width: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright{
+    padding: 20px 40px;
+    border-top: 2px solid rgba(0,0,0, 0.1);
+    background: rgba(228,222,222,);
+    text-align: center;
+}
+
+.copyright p:nth-child(1){
+    color: #333;
+}
+
+.copyright a {
+    color: #fb911f;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.contact .titre-text span{
+    color: #fb911f;
+    font-size: 2em;
+}
+
+header.sticky{
+    background: #fff;
+    padding: 10px 10px;
+    box-shadow: 0px 5px 20px rgba(0,0,0, 0.05);
+}
+
+header.sticky .logo{
+    color: #000;
+}
+
+header.sticky .navbar li a {
+    color: #000;
+}
+
+header.sticky li a:hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+@media (max-width: 991px) {
+header, 
+header.sticky{
+    padding: 10px 20px;
+}
+
+header .navbar li{
+    margin-left: 0px;
+}
+
+header .navbar li a {
+    text-decoration: none;
+    color: #111;
+    font-size: 1.6em;
+    font-weight: 300;
+}
+
+.navbar{
+    display: none;
+}
+section{
+    padding: 20px;
+}
+
+header .navbar.active{
+    width: 100%;
+    height: calc(100% -68px);
+    position: fixed;
+    top: 68px;
+    left:0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #ffff;
+    align-items: center;
+}
+
+.menuToggle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-image: url(./images/menu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    background-size: 30px;
+}
+
+.menuToggle.active
+{
+    background-image: url(./images/close.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-origin: center;
+}
+
+header.sticky .menuToggle{
+    filter: invert(1);
+}
+
+
+.banniere .contenu h2{
+    font-size: 2em;
+}
+
+.row .col50 img{
+    margin-left: 18%;
+}
+
+.contenu p:nth-child(2){
+    font-size: 1.2em;
+}
+.expert{
+    margin-top: 0px;
+}
+
+.menu{
+    margin-top: 0px;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.temoignage h2{
+    font-size: 2em;
+    text-align: center;
+}
+
+.temoignage p{
+text-align: center;
+}
+
+.contactform{
+    margin-left: 25%;
+}
+
+
+    .row .col50 {
+        position: relative;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    
+    }
+
+    .row{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px)
+{
+    .banniere .contenu h2{
+        font-size: 2.2em;
+        color: #fff;
+    }
+
+    .titre-text{
+        color: #000;
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: capitalize;
+    }
+
+    .temoignage h2 
+    {
+        font-size: 1.1em;
+    }
+
+    .temoignage p{
+        text-align: center;
+    }
+}
+
+/* Section commande */
+.commande .contenu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.carte {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.carte:hover {
+    transform: scale(1.05);
+}
+
+.carte img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.carte .details {
+    padding: 15px;
+}
+
+.carte .details h3 {
+    font-size: 1.5em;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.carte .details p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.carte .details .prix {
+    font-size: 1.2em;
+    color: #fb911f;
+    font-weight: bold;
+}
+
+/* Boutons de commande */
+.btn-payer {
+    padding: 10px 20px;
+    background: #fb911f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.btn-payer:hover {
+    background: #d87710;
+}
+
+/* Section de paiement */
+.paiement {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.paiement h2 {
+    color: #111;
+    margin-bottom: 20px;
+}
+.paiement p {
+    font-size: 1em;
+    color: #333;
+    margin: 10px 0;
+}
+.paiement .inputboite {
+    margin: 10px 0;
+}
+.paiement .inputboite input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+.paiement .inputboite input[type="submit"] {
+    background: #fb911f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.paiement .inputboite input[type="submit"]:hover {
+    background: #d87710;
+}
+
+
+
+/* Modale */
+.modale {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modale-contenu {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.modale-contenu h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modale-contenu p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.modale-contenu label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1em;
+    color: #333;
+}
+
+.modale-contenu button {
+    background: #fb911f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modale-contenu button:hover {
+    background: #d87710;
+}
+
+.fermer-modale {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+}
+
+
+
+
+.btn-retour {
+    background-color: #fb911f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.btn-retour:hover {
+    background-color: #d87710;
+}
+
+
+
+
+
+
+/* Styliser le tableau du panier */
+#table-panier {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#table-panier th,
+#table-panier td {
+    padding: 15px; /* Augmente l'espace intérieur */
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Ligne de séparation */
+}
+
+/* Ajoute plus d'espacement entre les colonnes */
+#table-panier th {
+    letter-spacing: 1px; /* Espace entre les lettres */
+    font-weight: 600;
+}
+
+#table-panier td {
+    padding-left: 10px; /* Espace à gauche pour les colonnes */
+    padding-right: 10px;
+}
+
+/* Pour ajuster les largeurs des colonnes */
+#table-panier th:nth-child(1),
+#table-panier td:nth-child(1) {
+    width: 40%; /* Largeur pour la colonne Crêpe */
+}
+
+#table-panier th:nth-child(2),
+#table-panier td:nth-child(2) {
+    width: 20%; /* Largeur pour la colonne Prix */
+}
+
+#table-panier th:nth-child(3),
+#table-panier td:nth-child(3) {
+    width: 20%; /* Largeur pour la colonne Quantité */
+}
+
+#table-panier th:nth-child(4),
+#table-panier td:nth-child(4) {
+    width: 20%; /* Largeur pour la colonne Action */
+}
+
+/* Ligne hover pour un effet visuel */
+#table-panier tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+
+
+/* Centrer le bouton "Valider la commande" */
+.total {
+    text-align: center; /* Centrer le contenu */
+    margin-top: 20px; /* Ajouter un espace au-dessus */
+}
+
+.total .btn-payer {
+    display: inline-block; /* S'assurer que le bouton reste inline */
+    padding: 10px 20px; /* Ajuster le padding pour un meilleur visuel */
+    font-size: 16px; /* Ajuster la taille du texte */
+    background-color: #ff6600; /* Couleur de fond (modifiable selon vos préférences) */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Retirer la bordure */
+    border-radius: 5px; /* Ajouter des bords arrondis */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet au survol */
+.total .btn-payer:hover {
+    background-color: #e55a00; /* Couleur légèrement plus foncée au survol */
+}
+
+
+
+
+/*CSS pour améliorer l'affichage de l'ajoute du commentaire par le client*/
+.ajout-commentaire {
+    background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.ajout-commentaire h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.ajout-commentaire input,
+.ajout-commentaire textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.ajout-commentaire textarea {
+    height: 100px;
+    resize: none;
+}
+
+.ajout-commentaire button {
+    background: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.ajout-commentaire button:hover {
+    background: #e65c00;
+}
+/*CSS pour améliorer l'affichage de l'ajoute du commentaire par le client*/
+
+
+
+
+
+/*Amélioration du texte de l'introduction sur le site*/
+.intro-text {
+    font-size: 1.2em; /* Taille réduite */
+    font-weight: bold;
+    color: #e67e22; /* Orange chaleureux */
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.description-text {
+    font-size: 0.9em; /* Texte plus petit */
+    line-height: 1.6;
+    text-align: justify;
+    color: #333; /* Gris foncé pour améliorer la lisibilité */
+}
+
+.highlight {
+    font-weight: bold;
+    color: #ff5733; /* Rouge orangé */
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.emoji {
+    font-size: 1em; /* Taille réduite pour correspondre au texte */
+}
+/*Amélioration du texte de l'introduction sur le site*/
+
+
+
+
+
+
+
+
+
+/* Ajout d'un fond semi-transparent */
+.fond-encadre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Fond blanc transparent */
+    backdrop-filter: blur(5px); /* Effet de flou */
+    border-radius: 10px; /* Coins arrondis */
+    z-index: -1; /* Met le fond derrière le contenu */
+}
+
+/* Encadré spécifique pour englober le menu et les témoignages */
+.section-encadree {
+    position: relative;
+    padding: 50px 0; /* Espace intérieur */
+    margin: 0 auto; /* Centrage */
+    width: 90%; /* Largeur ajustable */
+    border-radius: 15px; /* Bords arrondis */
+    background: rgba(0, 0, 0, 0.1); /* Fond sombre léger */
+    backdrop-filter: blur(10px); /* Ajoute un flou */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Effet d’ombre */
+}
+
+
+
+
+
+
+
+/* Conteneur du panier en haut à droite */
+.panier-container {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.btn-panier {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-panier span {
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+/* Style par défaut du panier */
+.btn-panier {
+    background-color: transparent;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Effet lorsqu'un article est ajouté */
+.panier-highlight {
+    background-color: #f1c40f; /* Jaune */
+    transform: scale(1.2);
+}
+
+/* Effet clignotant */
+@keyframes clignotement {
+    0% { background-color: #f1c40f; }
+    50% { background-color: #e67e22; } /* Orange */
+    100% { background-color: #f1c40f; }
+}
+.panier-clignote {
+    animation: clignotement 0.8s ease-in-out 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-left, .footer-center, .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo-footer {
+    width: 150px;  /* Ajuste la taille si nécessaire */
+    height: 150px; /* Assure que l'image reste un carré */
+    border-radius: 50%; /* Rend l'image circulaire */
+    object-fit: cover; /* Ajuste l'image à l'intérieur du cercle */
+    border: 3px solid #fff; /* Facultatif : ajoute une bordure blanche */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f39c12;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+}
+
+
+footer {
+    background-color: #fb911f; /* Orange */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-bottom {
+    background-color: #fb911f; /* Orange un peu plus foncé */
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style pour le bouton d'information */
+.info-container {
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+}
+
+.info-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ff9800;
+}
+
+/* Style de la bulle d'information */
+.info-bulle {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    background: #ff9800;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Affichage au survol */
+.info-container:hover .info-bulle {
+    display: block;
+}
+
+/* Animation d'apparition */
+.info-bulle::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+.bulle-info {
+    position: absolute;
+    background-color: orange;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 100px; /* Définir une largeur maximale */
+    word-wrap: break-word; /* Permet de couper les mots longs si nécessaire */
+    white-space: normal; /* Autorise le retour à la ligne */
+    text-align: center;
+    display: none;
+    z-index: 100;
+}
+
+
+
+
+
+
+
+/* Style de l'icône d'information */
+.info-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.info-icon img {
+    width: 100%;
+    height: auto;
+}
+
+/* Style de la bulle d'information */
+.tooltip {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: orange;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 120px; /* Largeur max */
+    display: none; /* Caché par défaut */
+    white-space: normal; /* Permet au texte de revenir à la ligne */
+    word-wrap: break-word;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+}
+
+/* Afficher la bulle lorsqu'on passe la souris */
+.info-icon:hover .tooltip {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+/* 🌟 Amélioration du design du formulaire */
+.contactform {
+    background: rgba(255, 255, 255, 0.9); /* Fond blanc avec légère transparence */
+    padding: 30px;
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    max-width: 500px; /* Largeur maximale */
+    margin: auto; /* Centrage */
+    text-align: center;
+}
+
+.contactform h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 🌟 Champs du formulaire */
+.contactform input, .contactform textarea {
+    width: 100%; /* Largeur complète */
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Effet au survol et focus */
+.contactform input:focus, .contactform textarea:focus {
+    border-color: #ff8c00; /* Orange */
+    background: #fff;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(255, 140, 0, 0.3);
+}
+
+/* 🌟 Bouton "Envoyer" */
+.contactform button {
+    background: #ff8c00;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    font-weight: bold;
+}
+
+.contactform button:hover {
+    background: #e67600;
+    transform: scale(1.05); /* Effet de zoom léger */
+}
+
+/* 🌟 Ajustements pour mobile */
+@media (max-width: 600px) {
+    .contactform {
+        width: 90%;
+        padding: 20px;
+    }
+}
+/* Animation d'apparition */
+.contactform {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+/* Classe pour déclencher l'animation */
+.contactform.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Effet au focus des champs */
+.contactform input:focus, 
+.contactform textarea:focus {
+    border-color: #ff8c00;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(255, 140, 0, 0.5);
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+.contactform:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.contactform button {
+    background: #ff8c00;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    font-weight: bold;
+}
+
+/* Effet au survol */
+.contactform button:hover {
+    background: #e67600;
+    transform: scale(1.05);
+}
+
+/* Effet au clic */
+.contactform button:active {
+    transform: scale(0.95);
+}
+/* 🌟 Amélioration du design du formulaire */
+
+
+
+
+
+
+
+/* 🌟 Animation d'apparition au scroll */
+.box {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+/* Classe qui s'active au défilement */
+.box.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🌟 Effet de zoom et d'ombre sur les images */
+.imbox img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.imbox:hover img {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌟 Animation des titres */
+.titre-texte span {
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.titre:hover .titre-texte span {
+    transform: scale(1.2);
+    color: #ff8c00;
+}
+
+/* 🌟 Effet d’élévation des cartes */
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#avis-clients {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+
+.avis-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.avis {
+    width: 250px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.avis img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.avis p {
+    font-size: 14px;
+    color: #444;
+}
+
+#laisser-avis {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#laisser-avis:hover {
+    background: #e68900;
+}
+/* 🌟 Animation d'apparition au scroll */
+
+
+
+
+/* 🌟 Animation d'apparition progressive (carte de mayotte) */
+.img.apparition {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease-in-out;
+}
+
+/* Classe qui s'active quand l'image est visible à l'écran */
+.img.apparition.appear {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 🌟 Effet de zoom et d’ombre sur l’image */
+.img img {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🌟 Effet au survol */
+.img:hover img {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌟 Ajout d’un effet "pulse" pour la localisation */
+.localisation {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+/* 🌟 Animation du point de localisation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* 🌟 Animation d'apparition progressive (carte de mayotte) */
+
+
+
+
+
+/* 🌟 Apparition fluide du texte */
+.col66 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+.col66.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🌟 Style du titre avec animation */
+.titre-texte {
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
+    color: #222;
+    text-transform: none;
+}
+
+/* Ligne animée sous le titre */
+.titre-texte::after {
+    content: "";
+    width: 50px;
+    height: 4px;
+    background: #ff8c00;
+    position: absolute;
+    left: 0;
+    bottom: 9px;
+    transition: width 0.4s ease-in-out;
+}
+
+.titre-texte:hover::after {
+    width: 120px;
+}
+
+/* 🌟 Animation progressive du texte important */
+.intro-text strong, 
+.description-text strong {
+    background: linear-gradient(120deg, #ff8c00 0%, #e67600 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.intro-text strong:hover, 
+.description-text strong:hover {
+    transform: scale(1.05);
+}
+
+/* 🌟 Effet d'ombre et de zoom sur le bloc */
+.col66 {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.col66:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* 🌟 Apparition fluide du texte */
+
+
+/*Ajoute ce CSS pour un scroll fluide*/
+html {
+    scroll-behavior: smooth;
+}
+/*Ajoute ce CSS pour un scroll fluide*/
+
+
+/*Optimisation du design de la section "Avis"*/
+#avis-clients {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+
+.avis-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.avis {
+    width: 250px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.avis:hover {
+    transform: scale(1.05);
+}
+
+.avis p {
+    font-size: 14px;
+    color: #444;
+}
+
+#laisser-avis {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+#laisser-avis:hover {
+    background: #e68900;
+}
+/*Optimisation du design de la section "Avis"*/

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/Logo.jpeg"> <!-- Favicon ajouté -->
+    <title>Les Crêpes de Nanou</title>
+</head>
+<body>
+
+    <!-- Icône du panier en haut à droite -->
+    <header>
+        <div class="panier-container">
+            <a href="panier.html" class="btn-panier">
+                🛒 <span id="compteur-panier">0</span>
+            </a>
+        </div>
+    </header>
+    
+
+    <section class="commande-container">
+        <!-- Contenu principal -->
+        <section class="commande" id="commande">
+            <div class="titre">
+                <h2 class="titre-texte"><span>P</span>asser Une Commande</h2>
+                <button class="btn-retour" onclick="location.href='index.html'">Retour à l'accueil</button>
+                <p>Choisissez vos crêpes et personnalisez-les à votre goût.</p>
+            </div>
+            <div class="contenu">
+                <!-- Crêpe 1 -->
+                <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Crêpe classique à la mahoraise</div>
+                    </div>
+                    <img src="./images/crepe.jpg" alt="Crêpe Classique">
+                    <div class="details">
+                        <h3>Crêpe Classique</h3>
+                        <span class="prix">0.50 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('Crêpe Classique', 0.50)">Ajouter</button>
+                    </div>
+                </div>
+                
+                <!-- Beredre -->
+                <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Beredre précuit, le goût authentique de Mayotte</div>
+                    </div>
+                    <img src="./images/Beredre.jpg" alt="Crêpe Chocolat">
+                    <div class="details">
+                        <h3>BEREDRE PRECUIT</h3>
+                        <span class="prix">1 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('BEREDRE PRECUIT', 1)">Ajouter</button>
+                    </div>
+                </div>
+                <!-- Nems -->
+                <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Nems croustillants au poulet, fromage et légumes.</div>
+                    </div>
+                    <img src="./images/Nems-poulet.jpeg" alt="Crêpe Fruits Rouges">
+                    <div class="details">
+                        <h3>NEMS</h3>
+                        <span class="prix">0.70 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('NEMS', 0.70)">Ajouter</button>
+                    </div>
+                </div>
+                <!-- Mkatra -->
+                <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Mkatré wa Foutra – Douceur fondante et gourmande</div>
+                    </div>
+                    <img src="./images/Mkatra.jpeg" alt="Churros">
+                    <div class="details">
+                        <h3>MKATRE WA FOUTRA</h3>
+                        <span class="prix">1 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('MKATRE WA FOUTRA', 1)">Ajouter</button>
+                    </div>
+                </div>
+                <!-- Samoussa -->
+                <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Samoussa – Croustillant et savoureux</div>
+                    </div>
+                    <img src="./images/Samoussa.jpg" alt="Barbe a Papa">
+                    <div class="details">
+                        <h3>SAMOUSSA</h3>
+                        <span class="prix">0.50 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('SAMOUSSA', 0.50)">Ajouter</button>
+                    </div>
+                </div>
+                <!-- Beingnets -->
+                <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Beignets salés – Moelleux et savoureux, 30 unités</div>
+                    </div>
+                    <img src="./images/Beingnets.jpg" alt="Pop-corn">
+                    <div class="details">
+                        <h3>BEINGNETS SALÉS</h3>
+                        <span class="prix">10 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('BEINGNETS SALÉS', 10)">Ajouter</button>
+                    </div>
+                </div>
+                <!-- Gaufres -->
+                <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Gaufres – Légères et gourmandes</div>
+                    </div>
+                    <img src="./images/Gaufres.png" alt="Granitas">
+                    <div class="details">
+                        <h3>GAUFRES</h3>
+                        <span class="prix">2.00 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('GAUFRES', 2)">Ajouter</button>
+                    </div>
+                </div>
+                 <!-- Churros -->
+                 <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Churros – Délice croustillant, 6 unités</div>
+                    </div>
+                    <img src="./images/Churros.jpeg" alt="Granitas">
+                    <div class="details">
+                        <h3>Churros</h3>
+                        <span class="prix">5.00 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('Churros', 5)">Ajouter</button>
+                    </div>
+                </div>
+                <!-- Mini Churros -->
+                <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Churros – Délice croustillant, 12 unités</div>
+                    </div>
+                    <img src="./images/Mini-Churros.jpg" alt="Granitas">
+                    <div class="details">
+                        <h3>Mini-Churros</h3>
+                        <span class="prix">12.00 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('Mini-Churros', 12)">Ajouter</button>
+                    </div>
+                </div>
+                <!-- Goulagoula -->
+                <div class="carte">
+                    <div class="info-icon" onclick="toggleTooltip(this)" onmouseover="showTooltip(this)" onmouseout="hideTooltip(this)">
+                        <img src="./images/info-icon.jpg" alt="info">
+                        <div class="tooltip">Goulagoula – Moelleux et gourmand, 30 unités</div>
+                    </div>
+                    <img src="./images/Goulagoula.jpg" alt="Granitas">
+                    <div class="details">
+                        <h3>GOULAGOULA</h3>
+                        <span class="prix">10.00 €</span>
+                        <button class="btn-payer" onclick="ajouterAuPanier('GOULAGOULA', 10)">Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+   
+
+    <footer>
+        <div class="container">
+            <!-- Section gauche (Logo) -->
+            <div class="footer-left">
+                <img src="./images/Logo.jpeg" alt="Les Crêpes de Nanou" class="logo-footer">
+            </div>
+    
+            <!-- Section centrale (Liens + Contact) -->
+            <div class="footer-center">
+                <ul class="footer-links">
+                    <li><a href="index.html#apropos">À propos</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="Commande.html">Commander</a></li>
+                </ul>
+                <div class="contact-info">
+                    <p>📍 26 Boulevard de la République Mzouasia, Mayotte</p>
+                    <p>📞 <a href="tel:+262639123456">+262 639 27 48 97</a></p>
+                    <p>📧 <a href="mailto:contact@crepesnanou.com">contact.pracsa@gmail.com</a></p>
+                </div>
+            </div>
+    
+            <!-- Section droite (Réseaux sociaux) -->
+            <div class="footer-right">
+                <p>Suivez-nous :</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M9.19795 21H12.1979V13H15.1979L15.6979 10H12.1979V8C12.1979 7.448 12.6459 7 13.1979 7H15.6979V4H12.6979C10.488 4 9.19795 5.79 9.19795 8V10H7.19795V13H9.19795V21Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM17 4C18.66 4 20 5.34 20 7V17C20 18.66 18.66 20 17 20H7C5.34 20 4 18.66 4 17V7C4 5.34 5.34 4 7 4H17ZM12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8ZM18 7C17.45 7 17 7.45 17 8C17 8.55 17.45 9 18 9C18.55 9 19 8.55 19 8C19 7.45 18.55 7 18 7Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com" target="_blank">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M12 2C12 2 12 8 18 8V11C15.68 11 14.12 10.3 12.95 9.23V14.47C12.95 17.37 10.59 19 8.69 19C6.97 19 5.11 17.73 5.11 15.24C5.11 12.74 7.26 11 8.9 11C9.51 11 10.1 11.2 10.58 11.53V9.24C9.99 9.09 9.41 9 8.84 9C6.59 9 2 10.67 2 15.44C2 19.39 5.48 22 8.46 22C11.67 22 14 19.7 14 16.67V6H12V2Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 Les Crêpes de Nanou. Tous droits réservés.</p>
+        </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

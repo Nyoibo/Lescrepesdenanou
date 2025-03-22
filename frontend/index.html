@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/Logo.jpeg"> <!-- Favicon ajouté -->
+    <title>Les Crêpes de Nanou</title>
+</head>
+<body>
+<header>
+    <a href="#" class="logo">
+        <img src="./images/Logo.jpeg" alt="Logo Les Crêpes de Nanou" class="logo-img">
+        <class="logo-text">Les <span class="highlight">Crêpes</span> de Nanou
+    </a>
+    
+    <div class="menuToggle" onclick="toggleMenu();"></div>
+    <ul class="navbar">
+        <li><a href="#banniere" onclick="toggleMenu();">Accueil</a></li>
+        <li><a href="#apropos" onclick="toggleMenu();">A propos</a></li>
+        <li><a href="#menu" onclick="toggleMenu();">Menu</a></li>
+        <li><a href="#expert" onclick="toggleMenu();">Expert</a></li>
+        <li><a href="#avis-clients" onclick="toggleMenu();">Avis</a></li>
+        <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+        <a href="Commande.html" class="btn-reserve" onclick="toggleMenu();">Commandez</a>
+    </ul>
+</header>
+<section class="banniere" id="banniere">
+    <div class="slider">
+        <div class="slide" style="background-image: url('./images/img.png');"></div>
+        <div class="slide" style="background-image: url('./images/img2.png');"></div>
+        <div class="slide" style="background-image: url('./images/img3.png');"></div>
+    </div>
+    <div class="contenu">
+        <h2>Bienvenue chez Nanou</h2>
+        <p>Découvrez nos délicieuses réalisations et commandez dès maintenant !</p>
+        <a href="#menu" class="btn1">Notre Menu</a>
+        <a href="Commande.html" class="btn2">Commandez</a>
+    </div>
+</section>
+</body>
+</html>
+
+
+
+
+
+<section class="apropos" id="apropos">
+    <div class="row">
+        <div class="col66">
+            <h2 class="titre-texte"><span>A</span> Propos De Nous</h2><br>
+            <p class="intro-text">
+                <strong>Chez Les Crêpes de Nanou, chaque bouchée est une invitation à la gourmandise !</strong>
+            </p>
+            <p class="description-text">
+                Située à <strong>Mzouasia, Mayotte</strong>, notre entreprise est née d’une passion pour les saveurs authentiques et le plaisir de partager des moments sucrés.  
+                <br><br>
+                Dans une ambiance <strong>conviviale et chaleureuse</strong>, nous vous proposons des douceurs préparées avec soin, pour ravir toutes les envies.  
+                <br><br>
+                Que ce soit pour une <em>pause gourmande</em>, un <em>événement spécial</em> ou tout simplement pour vous faire plaisir, nous sommes là pour vous régaler.  
+                <br><br>
+                Venez découvrir notre <strong>savoir-faire</strong> et partagez votre expérience en nous laissant un <span class="highlight">témoignage</span>.  
+                <br>
+                <span class="emoji">😊</span> <em>Votre avis compte pour nous !</em>
+            </p>
+        </div>
+
+        <div class="col33">
+            <div class="img apparition" style="position: relative;">
+                <img src="./images/Mayotte.png" alt="Carte de Mayotte">
+                <!-- Point de localisation animé -->
+                <div class="localisation" style="top: 71%; left: 29.5%; position: absolute;"></div>
+            </div>
+        </div>
+        
+        
+    </div> 
+</section>
+
+
+<!-- Encadré avec fond transparent -->
+<div class="fond-encadre"></div>
+<section class="menu" id="menu">
+    <div class="titre">
+        <h2 class="titre-texte"><span>M</span>enu</h2>
+        <p>Succombez à nos spécialités, une explosion de saveurs pour un pur moment de bonheur.</p>
+    </div>
+    <div class="contenu">
+        <div class="box">
+            <div class="imbox">
+                <img src="./images/c14.jpg" alt="">
+            </div>
+            <div class="text">
+                <h3>Crêpe</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imbox">
+                <img src="./images/Nems-poulet.jpeg" alt="">
+            </div>
+            <div class="text">
+                <h3>Nems</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imbox">
+                <img src="./images/Gaufres.png" alt="">
+            </div>
+            <div class="text">
+                <h3>Gaufres</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imbox">
+                <img src="./images/Goulagoula.jpg" alt="">
+            </div>
+            <div class="text">
+                <h3>Goulagoula</h3>
+            </div>
+        </div>
+   
+     
+    
+    </div>
+ </div>
+ <div class="titre">
+    <a href="Commande.html" class="btn1">Voir Plus</a>
+ </div>
+</section>
+<section class="expert" id="expert">
+    <div class="titre">
+        <h2 class="titre-texte">Nos <span>E</span>xperts</h2>
+        <p>Derrière chaque réalisation parfaite, il y a un expert qui allie passion et excellence.</p>
+    </div>
+    <div class="contenu">
+       
+        
+        <div class="box">
+            <div class="imbox">
+                <img src="./images/equipe3.jpg" alt="">
+            </div>
+            <div class="text">
+                <h3>Franck leroi</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imbox">
+                <img src="./images/equipe4.jpg" alt="">
+            </div>
+            <div class="text">
+                <h3>Franck leroi</h3>
+            </div>
+        </div>
+    </div>
+ </div>
+</section>
+
+
+<section class="Avis" id="avis-clients">
+    <h2>⭐ Avis de nos clients</h2><br>
+    <div class="avis-container">
+        <div class="avis">
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>"Les meilleures crêpes que j'ai jamais goûtées !"</p>
+            <strong>- Marie D.</strong>
+        </div>
+        <div class="avis">
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>"Un vrai délice, je recommande à 100% !"</p>
+            <strong>- Paul R.</strong>
+        </div>
+        <div class="avis">
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>"Super accueil et crêpes excellentes !"</p>
+            <strong>- Sophie L.</strong>
+        </div>
+    </div>
+    <button id="laisser-avis">Laisser un avis</button>
+</section>
+
+
+
+<!-- Section Contact -->
+<section class="contact" id="contact">
+    <div class="titre noir">
+        <h2 class="titre-text"><span>C</span>ontact</h2>
+        <p>Vous pouvez nous contacter via nos différents contacts ou nos réseaux sociaux.</p>
+    </div><br>
+    <div class="contactform">
+        <h3>Envoyer un message</h3>
+        <form id="contactForm">
+            <input type="text" id="nom" placeholder="Nom" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" placeholder="Message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+        <p id="formMessage"></p>
+    </div>
+</section>
+
+
+<!--A modifier lorsque les utilisateur pourrons mettre des avis pour le site sur google-->
+<script>
+    document.getElementById("laisser-avis").addEventListener("click", function() {
+        window.open("https://g.page/r/CODE_DE_TON_RESTAURANT/review", "_blank");
+    });
+</script>
+
+<script>    
+
+ type="text/javascript">
+     window.addEventListener('scroll', function(){
+         const header =document.querySelector('header');
+         header.classList.toggle("sticky", window.scrollY > 0 );
+     });
+
+     function toggleMenu(){
+         const tmenuToggle = document.querySelector('.menuToggle');
+         const navbar = document.querySelector('.navbar');
+         navbar.classList.toggle('active');
+         menuToggle.classList.toggle('active');
+     }
+</script>
+
+<!--Ajoute un script JavaScript (Facultatif)-->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80, // Ajuste l'espace si ta navbar est fixe
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+</script>
+    
+
+<!-- Inclusion de EmailJS (DOIT ÊTRE AVANT L'UTILISATION DE EMAILJS) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+    // Initialisation EmailJS avec ta clé publique
+    emailjs.init("5RZn8DgVORiyWq1LK");
+
+    // Formulaire de contact
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let nom = document.getElementById("nom").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        if (nom === "" || email === "" || message === "") {
+            document.getElementById("formMessage").innerHTML = "Veuillez remplir tous les champs.";
+            return;
+        }
+
+        // Vérification dans la console pour voir les données envoyées
+        console.log("Envoi en cours :", nom, email, message);
+
+        // Envoi du message avec EmailJS
+        emailjs.send("service_lr6hd25", "template_j5zrzrk", {
+            nom: nom,
+            email: email,
+            message: message
+        }).then(response => {
+            console.log("Email envoyé :", response);
+            document.getElementById("formMessage").innerHTML = "Message envoyé avec succès !";
+            document.getElementById("contactForm").reset();
+        }).catch(error => {
+            console.error("Erreur EmailJS :", error);
+            document.getElementById("formMessage").innerHTML = "Erreur lors de l'envoi.";
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const contactForm = document.querySelector(".contactform");
+
+    function checkVisibility() {
+        const rect = contactForm.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            contactForm.classList.add("appear");
+        }
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const boxes = document.querySelectorAll(".box");
+
+    function checkVisibility() {
+        boxes.forEach(box => {
+            const rect = box.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                box.classList.add("appear");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const img = document.querySelector(".img.apparition");
+
+    function checkVisibility() {
+        const rect = img.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            img.classList.add("appear");
+        }
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+});
+
+
+/*Ajout du JavaScript pour déclencher l'animation au scroll*/
+document.addEventListener("DOMContentLoaded", function() {
+    const col66 = document.querySelector(".col66");
+
+    function checkVisibility() {
+        const rect = col66.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            col66.classList.add("appear");
+        }
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+});
+
+</script>
+
+
+<footer>
+    <div class="container">
+        <!-- Section gauche (Logo) -->
+        <div class="footer-left">
+            <img src="./images/Logo.jpeg" alt="Les Crêpes de Nanou" class="logo-footer">
+        </div>
+
+        <!-- Section centrale (Liens + Contact) -->
+        <div class="footer-center">
+            <ul class="footer-links">
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="Commande.html">Commander</a></li>
+            </ul>
+            <div class="contact-info">
+                <p>📍 26 Boulevard de la République Mzouasia, Mayotte</p>
+                <p>📞 <a href="tel:+262639123456">+262 639 27 48 97</a></p>
+                <p>📧 <a href="mailto:contact@crepesnanou.com">contact.pracsa@gmail.com</a></p>
+            </div>
+        </div>
+
+        <!-- Section droite (Réseaux sociaux) -->
+        <div class="footer-right">
+            <p>Suivez-nous :</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M9.19795 21H12.1979V13H15.1979L15.6979 10H12.1979V8C12.1979 7.448 12.6459 7 13.1979 7H15.6979V4H12.6979C10.488 4 9.19795 5.79 9.19795 8V10H7.19795V13H9.19795V21Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM17 4C18.66 4 20 5.34 20 7V17C20 18.66 18.66 20 17 20H7C5.34 20 4 18.66 4 17V7C4 5.34 5.34 4 7 4H17ZM12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8ZM18 7C17.45 7 17 7.45 17 8C17 8.55 17.45 9 18 9C18.55 9 19 8.55 19 8C19 7.45 18.55 7 18 7Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com" target="_blank">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M12 2C12 2 12 8 18 8V11C15.68 11 14.12 10.3 12.95 9.23V14.47C12.95 17.37 10.59 19 8.69 19C6.97 19 5.11 17.73 5.11 15.24C5.11 12.74 7.26 11 8.9 11C9.51 11 10.1 11.2 10.58 11.53V9.24C9.99 9.09 9.41 9 8.84 9C6.59 9 2 10.67 2 15.44C2 19.39 5.48 22 8.46 22C11.67 22 14 19.7 14 16.67V6H12V2Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Les Crêpes de Nanou. Tous droits réservés.</p>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
