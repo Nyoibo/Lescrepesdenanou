@@ -1878,3 +1878,22 @@ html {
     background: #e68900;
 }
 /*Optimisation du design de la section "Avis"*/
+
+
+
+
+/*Forcer le footer a resté en bas de la page*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+footer {
+    margin-top: auto;
+    background-color: #FF8C00; /* Ta couleur orange */
+    padding: 20px;
+}
+/*Forcer le footer a resté en bas de la page*/
