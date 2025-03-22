@@ -13,6 +13,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const frontendPath = path.join(__dirname, '../frontend');
 
+// Vérifie que le dossier frontend existe
 if (!fs.existsSync(frontendPath)) {
     console.error("🚨 ERREUR : Le dossier frontend/ est introuvable !");
 } else {
@@ -42,13 +43,12 @@ app.use((req, res, next) => {
     }
 });
 
-// Vérification des identifiants email
+// Configurer Nodemailer
 if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     console.error("❌ ERREUR : Identifiants iCloud manquants !");
     process.exit(1);
 }
 
-// Configurer Nodemailer
 const transporter = nodemailer.createTransport({
     host: "smtp.mail.me.com",
     port: 587,
@@ -90,8 +90,8 @@ app.post('/create-checkout-session', async (req, res) => {
             payment_method_types: ['card'],
             line_items: lineItems,
             mode: 'payment',
-            success_url: 'http://localhost:4242/success.html',
-            cancel_url: 'http://localhost:4242/cancel.html',
+            success_url: 'https://lescrepesdenanou.onrender.com/success.html',
+            cancel_url: 'https://lescrepesdenanou.onrender.com/cancel.html',
             customer_email: emailClient,
             metadata: { orderDetails }
         });
@@ -130,7 +130,7 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), (req, res) =>
             return res.status(400).send("Erreur : Aucun e-mail associé à la commande.");
         }
 
-        // Email de confirmation client
+        // Email confirmation client
         const mailOptionsClient = {
             from: `"Les Crêpes de Nanou" <${process.env.EMAIL_USER}>`,
             to: emailClient,
@@ -140,13 +140,13 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), (req, res) =>
 
         transporter.sendMail(mailOptionsClient, (error) => {
             if (error) {
-                console.error('❌ Erreur envoi e-mail client :', error);
+                console.error('❌ Erreur e-mail client :', error);
             } else {
-                console.log(`📩 E-mail client envoyé : ${emailClient}`);
+                console.log(`📩 Email client envoyé : ${emailClient}`);
             }
         });
 
-        // Email de notification admin
+        // Email notification admin
         const mailOptionsAdmin = {
             from: `"Les Crêpes de Nanou" <${process.env.EMAIL_USER}>`,
             to: "ben.h21@icloud.com",
@@ -156,7 +156,7 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), (req, res) =>
 
         transporter.sendMail(mailOptionsAdmin, (error) => {
             if (error) {
-                console.error('❌ Erreur envoi e-mail admin :', error);
+                console.error('❌ Erreur e-mail admin :', error);
             } else {
                 console.log(`📩 Notification admin envoyée`);
             }
@@ -175,4 +175,4 @@ app.get('/', (req, res) => {
 
 // Lancer le serveur
 const PORT = process.env.PORT || 4242;
-app.listen(PORT, () => console.log(`✅ Serveur sur http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`✅ Serveur actif sur PORT ${PORT}`));

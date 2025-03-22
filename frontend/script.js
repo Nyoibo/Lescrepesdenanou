@@ -95,7 +95,7 @@ async function passerAuPaiement() {
     }
 
     try {
-        const response = await fetch('http://localhost:4242/create-checkout-session', {
+        const response = await fetch('https://lescrepesdenanou.onrender.com/create-checkout-session', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ panier, emailClient }),
@@ -159,5 +159,3 @@ function ajouterCommentaire() {
     document.getElementById("nom").value = "";
     document.getElementById("message").value = "";
 }
-
-
