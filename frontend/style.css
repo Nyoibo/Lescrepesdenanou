@@ -1897,3 +1897,49 @@ footer {
     padding: 20px;
 }
 /*Forcer le footer a resté en bas de la page*/
+
+
+
+
+
+/* Organisation des blocs pour le responsive */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permet de passer à la ligne si besoin */
+    gap: 10px; /* Espace entre les sections */
+}
+
+/* Chaque section prend minimum 250px mais peut s'adapter */
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1 1 250px;
+}
+
+/* CENTRAGE pour les petits écrans (téléphone, tablette) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        margin: 10px 0;
+    }
+
+    .footer-links li {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+
+    .contact-info p {
+        margin: 5px 0;
+    }
+}
+
+
