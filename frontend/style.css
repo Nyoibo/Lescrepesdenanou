@@ -1943,3 +1943,22 @@ footer {
 }
 
 
+
+/*Permet de bien positionner la bulle info pour la page commande*/
+.info-icon {
+    position: absolute; /* ⬅ Positionner relativement à la carte */
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Pour que l’info reste sur la carte */
+.carte {
+    position: relative; /* ⬅ Permet à .info-icon de se positionner dedans */
+}
+/*Permet de bien positionner la bulle info pour la page commande*/
