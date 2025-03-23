@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../images/Logo.jpeg" />
+
+    <title>Les Crêpes de Nanou - Panier</title>
+</head>
+<body> 
+
+    <div class="titre">
+        <h2 class="titre-texte">Nanou<span>'Z</span> Crêpes</h2>      
+    </div>
+
+    <section class="recap-panier">
+        <div class="titre">
+            <button class="btn-retour" onclick="location.href='/Commande'">Retour à la commande</button>  
+        </div>
+        
+        <h2>Votre Panier</h2>
+        <table id="table-panier">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="total">
+            <p>Total : <span id="total-panier">0.00 €</span></p>
+        </div>
+
+        <button class="btn-payer" onclick="passerAuPaiement()">Payer</button>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-left">
+                <img src="../images/Logo.jpeg" alt="Les Crêpes de Nanou" class="logo-footer" />
+            </div>
+    
+            <div class="footer-center">
+                <ul class="footer-links">
+                    <li><a href="/Accueil#apropos">À propos</a></li>
+                    <li><a href="/Accueil#menu">Menu</a></li>
+                    <li><a href="/Accueil#contact">Contact</a></li>
+                    <li><a href="/Commande">Commander</a></li>
+                </ul>
+                <div class="contact-info">
+                    <p>📍 26 Boulevard de la République Mzouasia, Mayotte</p>
+                    <p>📞 <a href="tel:+262639123456">+262 639 27 48 97</a></p>
+                    <p>📧 <a href="mailto:contact@crepesnanou.com">contact.pracsa@gmail.com</a></p>
+                </div>
+            </div>
+    
+            <div class="footer-right">
+                <p>Suivez-nous :</p>
+                <div class="social-icons">
+                    <!-- Réseaux sociaux inchangés -->
+                    <a href="https://www.facebook.com" target="_blank">
+                        <!-- Facebook SVG -->
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <!-- Instagram SVG -->
+                    </a>
+                    <a href="https://www.tiktok.com" target="_blank">
+                        <!-- TikTok SVG -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 Les Crêpes de Nanou. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

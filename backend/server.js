@@ -1,4 +1,3 @@
-// server.js
 require('dotenv').config();
 const express = require('express');
 const Stripe = require('stripe');
@@ -24,14 +23,27 @@ if (!fs.existsSync(frontendPath)) {
 app.use(cors());
 app.use(express.static(frontendPath));
 
-// Route pour accéder au panier
-app.get('/Panier.html', (req, res) => {
-    const filePath = path.join(frontendPath, 'Panier.html');
-    if (!fs.existsSync(filePath)) {
-        console.error("🚨 Fichier panier.html introuvable !");
-        return res.status(404).send("Fichier panier.html introuvable.");
+// Redirection "/" vers "/Accueil"
+app.get('/', (req, res) => {
+    res.redirect('/Accueil');
+});
+
+// Servir les pages avec URL propre (ex: /Commande -> frontend/Commande/index.html)
+app.get('/:page', (req, res, next) => {
+    const page = req.params.page;
+
+    // Sécuriser la route pour éviter d'accéder à des fichiers sensibles
+    const allowedPages = ['Accueil', 'Commande', 'Panier', 'concel', 'success'];
+    if (!allowedPages.includes(page)) {
+        return res.status(404).send('Page non trouvée.');
     }
-    res.sendFile(filePath);
+
+    const filePath = path.join(frontendPath, page, 'index.html');
+    if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
+    } else {
+        res.status(404).send('Page non trouvée.');
+    }
 });
 
 // Middleware spécial pour /webhook
@@ -90,8 +102,8 @@ app.post('/create-checkout-session', async (req, res) => {
             payment_method_types: ['card'],
             line_items: lineItems,
             mode: 'payment',
-            success_url: 'https://lescrepesdenanou.onrender.com/success.html',
-            cancel_url: 'https://lescrepesdenanou.onrender.com/cancel.html',
+            success_url: 'https://lescrepesdenanou.onrender.com/success',
+            cancel_url: 'https://lescrepesdenanou.onrender.com/concel',
             customer_email: emailClient,
             metadata: { orderDetails }
         });
@@ -166,11 +178,6 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), (req, res) =>
     }
 
     return res.status(400).send('Événement non pris en charge.');
-});
-
-// Route index.html
-app.get('/', (req, res) => {
-    res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 // Lancer le serveur

@@ -1,9 +1,10 @@
-// script.js
-
+// Initialisation du panier depuis le localStorage
 let panier = JSON.parse(localStorage.getItem('panier')) || [];
 
+// Ajouter un produit au panier
 function ajouterAuPanier(nom, prix) {
     const compteurPanier = document.getElementById('compteur-panier');
+
     const index = panier.findIndex(item => item.nom === nom);
     if (index !== -1) {
         panier[index].quantite += 1;
@@ -12,32 +13,39 @@ function ajouterAuPanier(nom, prix) {
     }
 
     localStorage.setItem('panier', JSON.stringify(panier));
-    mettreAJourPanier();
     mettreAJourCompteur();
     effetPanier();
 
-    compteurPanier.classList.add('panier-anim');
-    setTimeout(() => compteurPanier.classList.remove('panier-anim'), 500);
+    // Animation compteur panier
+    if (compteurPanier) {
+        compteurPanier.classList.add('panier-anim');
+        setTimeout(() => compteurPanier.classList.remove('panier-anim'), 500);
+    }
 }
 
+// Effet visuel sur le bouton panier
 function effetPanier() {
     const boutonPanier = document.querySelector(".btn-panier");
+    if (!boutonPanier) return;
     boutonPanier.classList.add("panier-highlight", "panier-clignote");
     setTimeout(() => boutonPanier.classList.remove("panier-highlight", "panier-clignote"), 2000);
 }
 
+// Mettre à jour le compteur panier dans le header
 function mettreAJourCompteur() {
     const compteurPanier = document.getElementById("compteur-panier");
+    if (!compteurPanier) return;
     const totalArticles = panier.reduce((total, item) => total + item.quantite, 0);
     compteurPanier.innerText = totalArticles;
 }
 
+// Affichage du contenu du panier (dans la page Panier)
 function mettreAJourPanier() {
     const tablePanier = document.querySelector("#table-panier tbody");
     const totalPanier = document.getElementById("total-panier");
     const boutonValider = document.querySelector(".btn-payer");
 
-    if (!tablePanier || !totalPanier) return;
+    if (!tablePanier || !totalPanier || !boutonValider) return;
 
     tablePanier.innerHTML = "";
     let total = 0;
@@ -68,6 +76,7 @@ function mettreAJourPanier() {
     }
 }
 
+// Modifier la quantité d'un article
 function modifierQuantite(index, nouvelleQuantite) {
     if (nouvelleQuantite < 1) return;
     panier[index].quantite = parseInt(nouvelleQuantite);
@@ -75,6 +84,7 @@ function modifierQuantite(index, nouvelleQuantite) {
     mettreAJourPanier();
 }
 
+// Supprimer un produit du panier
 function supprimerDuPanier(index) {
     panier.splice(index, 1);
     localStorage.setItem('panier', JSON.stringify(panier));
@@ -82,6 +92,7 @@ function supprimerDuPanier(index) {
     mettreAJourCompteur();
 }
 
+// Paiement Stripe
 async function passerAuPaiement() {
     if (panier.length === 0) {
         alert("Votre panier est vide !");
@@ -101,9 +112,7 @@ async function passerAuPaiement() {
             body: JSON.stringify({ panier, emailClient }),
         });
 
-        if (!response.ok) {
-            throw new Error('Erreur lors de la création de la session de paiement');
-        }
+        if (!response.ok) throw new Error('Erreur lors de la création de la session de paiement');
 
         const data = await response.json();
         if (data.url) {
@@ -117,25 +126,19 @@ async function passerAuPaiement() {
     }
 }
 
-function validerPanier() {
-    if (panier.length === 0) {
-        alert("Votre panier est vide !");
-        return;
-    }
-    passerAuPaiement();
-}
-
+// Aller à la page Panier
 function afficherPagePanier() {
-    window.location.href = "panier.html";
+    window.location.href = "/Panier";
 }
 
+// DOM prêt : mettre à jour compteur et panier
 document.addEventListener("DOMContentLoaded", () => {
-    mettreAJourPanier();
     mettreAJourCompteur();
+    mettreAJourPanier(); // Si on est sur la page Panier, ça fonctionne, sinon, aucun effet
     afficherCommentaires();
 });
 
-// Commentaires
+// Commentaires (section Avis clients)
 const MAX_CARACTERES = 100;
 
 function ajouterCommentaire() {
@@ -158,4 +161,9 @@ function ajouterCommentaire() {
     afficherCommentaires();
     document.getElementById("nom").value = "";
     document.getElementById("message").value = "";
+}
+
+// Affichage des commentaires (optionnel, à compléter)
+function afficherCommentaires() {
+    // Ajoute ton code ici si tu veux afficher les commentaires dans une section spécifique
 }
