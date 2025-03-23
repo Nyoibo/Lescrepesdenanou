@@ -1979,3 +1979,16 @@ footer {
     opacity: 1;
 }
 /*amélioration des info-bulle de la page commande*/
+
+
+
+/* Style pour les inputs de quantité */
+#table-panier input[type="number"] {
+    width: 60px;           /* Réduit la largeur */
+    padding: 4px;          /* Moins d'espace à l'intérieur */
+    font-size: 0.9em;      /* Texte plus petit */
+    text-align: center;    /* Centrer le chiffre */
+    border-radius: 4px;    /* Coins légèrement arrondis */
+    border: 1px solid #ccc;
+}
+/* Style pour les inputs de quantité */
