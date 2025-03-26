@@ -102,8 +102,8 @@ app.post('/create-checkout-session', async (req, res) => {
             payment_method_types: ['card'],
             line_items: lineItems,
             mode: 'payment',
-            success_url: 'https://lescrepesdenanou.onrender.com/success',
-            cancel_url: 'https://lescrepesdenanou.onrender.com/concel',
+            success_url: 'https://lescrepesdenanou.com/success',
+            cancel_url: 'https://lescrepesdenanou.com/concel',
             customer_email: emailClient,
             metadata: { orderDetails }
         });
